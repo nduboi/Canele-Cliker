@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canelé Clicker</title>
+    <link rel="stylesheet" href="build/css/main.css">
+    <script type="text/javascript" src="build/js/cuisine.js"></script>
+    <link rel="shortcut icon" href="build/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <audio id="audio" src="build/music/buy.mp3"></audio>
+    <h1 class="enseigne">Canelé Clicker</h1>
+    <img src="build/img/caneles.jpg" class="caneles" alt="caneles">
+    <div class="underimg">
+        <div id="caneles"> Vous avez 0 canelé</div>
+        <button id="cuisiner" onclick="addcanele('blue')">Cuisiner</button>
+        <button id="four" onclick="delcanele('red')" disabled>Acheter un four (25 Canelé)</button>
+    </div>
+</body>
+</html>
