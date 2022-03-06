@@ -5,15 +5,44 @@
     <link rel="stylesheet" href="build/css/main.css">
     <script type="text/javascript" src="build/js/cuisine.js"></script>
     <link rel="shortcut icon" href="build/img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <audio id="audio" src="build/music/buy.mp3"></audio>
+<audio id="audio" src="build/music/buy.mp3"></audio>
+<body class="bg-gray-100">
+    <main class="flex justify-center">
+        <section class=" container lg:p-8 md:p-8 md:grid-cols-2 md:grid-rows-3 grid sm:grid-cols-2 sm:grid-rows-2 lg:grid-rows-1 lg:grid-cols-4 grid-cols-2 grid-rows-8">
+            <div class="col-start-1 row-start-2 col-span-2 lg:col-start-1 text-center m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5 md:col-span-2 lg:col-span-1 md:col-start-1 md:row-start-1 lg:row-start-1 lg:col-start-1">
+                <p id="enseigne" class="my-5 text-xl">Canelé Clicker</p>
+            </div>
+            <div class="col-start-1 row-start-3 col-span-2 caneles lg:col-start-2  text-center m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5 md:col-span-2 md:col-start-1 md:row-start-2 lg:col-span-1 lg:row-start-1 lg:col-start-2">
+                    <p id="caneles" class="my-5">Vous avez 0 canelé</p>
+            </div>
+            <div class="col-start-1 row-start-4 col-span-2 sm:col-span-1 cuisiner lg:col-start-3 m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5 md:col-start-1 md:row-start-3 lg:row-start-1 lg:col-start-3">
+                    <button id="cuisiner" onclick="addcanele('blue')" class="p-2 lg:rounded-md bg-blue-200">Cuisiner</button><br>
+                    <label for="cuisiner" class="p-4" id="nbrcan">Pour 1 clique 1 cannelé</label>
+            </div>
+            <div class="col-start-1 row-start-5 col-span-2 sm:col-span-1 four m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5  md:col-start-2 md:row-start-3 lg:row-start-1 lg:col-start-4">
+                    <button id="four" onclick="delcanele('red')" disabled class="p-2 lg:rounded-md bg-green-500 disabled:opacity-75 disabled:bg-red-500" >Acheter un four (25 Canelé)</button><br>
+                    <label for="four" class="p-4" id="counter">Vous avez aucun four</label>
+            </div>
+        </section>
+    </main>
+    <main class="flex ">
+        <img src="build/img/caneles.jpg" class="	" >
+    </main>
+
+
+
+
+
+    <!-- <audio id="audio" src="build/music/buy.mp3"></audio>
     <h1 class="enseigne">Canelé Clicker</h1>
     <img src="build/img/caneles.jpg" class="caneles" alt="caneles">
     <div class="underimg">
         <div id="caneles"> Vous avez 0 canelé</div>
         <button id="cuisiner" onclick="addcanele('blue')">Cuisiner</button>
+        <label for="four" id="counter"></label>
         <button id="four" onclick="delcanele('red')" disabled>Acheter un four (25 Canelé)</button>
-    </div>
+    </div> -->
 </body>
 </html>

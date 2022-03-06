@@ -13,6 +13,10 @@ function addcanele(newColor) {
     if (ref < 25){
         document.getElementById('four').disabled = true;
     }
+    if (four >= 1){
+        var conteur = document.getElementById('counter');
+        conteur.innerHTML = "Vous avez "+ four +" four";
+    }
 }
 function delcanele(newColor) {
     if (ref >= 25) {
@@ -25,10 +29,16 @@ function delcanele(newColor) {
         }
         four = four+1;
         var elem = document.getElementById('caneles');
-        elem.innerHTML = "Vous avez "+ ref +" caneléss";
+        elem.innerHTML = "Vous avez "+ ref +" canelés";
         elem.style.color = newColor;
     } else {
         console.log("Vous avez  " , ref, " de canelés pas assez pour un four");
     }
+    if (four >= 1){
+        var conteur = document.getElementById('counter');
+        conteur.innerHTML = "Vous avez "+ four +" four";
+        var nbrcan = document.getElementById('nbrcan');
+        nbrcanle = four+1 ;
+        nbrcan.innerHTML = "Pour 1 clique "+ nbrcanle  +" canelés";
+    }
 }
-
