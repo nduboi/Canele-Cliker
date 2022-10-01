@@ -1,0 +1,15 @@
+.enseigne{
+    font-family: 'Pacifico', cursive;
+    background-clip: text;
+    background: linear-gradient(to right, #5f021f, rgb(3, 131, 140));
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+.fredoka{
+    font-family: 'Fredoka One', cursive;
+    color: #5f021f;   
+}
+main{
+    color: #262626;
+    font-family: 'Montserrat', sans-serif;
+}

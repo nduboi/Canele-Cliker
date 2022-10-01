@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Canelé Clicker</title>
-    <link rel="stylesheet" href="build/css/main.css">
-    <script type="text/javascript" src="build/js/cuisine.js"></script>
-    <link rel="shortcut icon" href="build/img/favicon.ico" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foods Clickers</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <script src="main.js"></script>
 </head>
-<audio id="audio" src="build/music/buy.mp3"></audio>
-<body class="bg-gray-100">
-    <main class="flex justify-center">
-        <section class="grid-cols-2 grid-rows-6 sm:grid-rows-2 sm:grid-cols-2 md:grid-cols-2 md:grid-rows-3 lg:grid-rows-1 lg:grid-cols-4 container p-8  grid">
-            <div class="col-start-1 col-span-2 row-start-2 sm:row-start-1 sm:col-start-1 sm:col-span-1 md:row-start-1 md:col-start-1 md:col-span-2 lg:col-start-1 lg:row-start-1 lg:col-span-1  text-center m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5  ">
-                <p id="enseigne" class="my-5 text-2xl">Canelé Clicker</p>
+<body class="h-screen w-screen bg-gray-100" onload="timetime()" >
+    <header class="flex grid items-center grid-cols-3 p-2 h-1/6">
+        <p class="col-start-1 flex justify-center fredoka">Mon Compte</p>
+        <p class="col-start-2 flex justify-center enseigne text-2xl">Foods Clikers</p>
+        <p class="col-start-3 flex justify-center fredoka" id="money">Money : 0$</p>
+    </header>
+    <main class="h-5/6 flex flex-col grid grid-cols-3 grid-rows-2 w-full gap-2 p-2">
+        <section class="flex flex-col justify-center items-center bg-white rounded-lg shadow-sm m-5 hover:m-4 hover:shadow-lg">
+            <h1 class="flex justify-center" id="pricecan">Cannelées (1$) </h1>
+            <h1 class="flex justify-center" id="nbrcan">Vous avez : 0 Cannelée(s)</h1>
+            <button class="flex justify-center mt-2" onclick="cookcannele()">Cuisiner</button>
+            <div class="flex grid grid-cols-2 grid-rows-2">
+                <button class="flex justify-center row-start-2" id="moulebuy" onclick="buymoule()">Achat d'un moule <br> (10$)</button>
+                <input class="row-start-1 col-span-2 flex justify-center text-center p-1" id="sellcannum" type="number" name="canv" placeholder="Mise en vente de ..." id="canv">
+                <button class="flex justify-center row-start-2"  onclick="sellcan()">Vendre</button>
             </div>
-            <div class="col-start-1 col-span-2 row-start-3 sm:row-start-1 sm:col-start-2 sm:col-span-1 md:row-start-2 md:col-start-1 md:col-span-2 lg:col-span-1 lg:row-start-1 lg:col-start-2 caneles   text-center m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5">
-                    <p id="caneles" class="my-5">Vous avez 0 canelé</p>
-            </div>
-            <div class="col-start-1 col-span-2 row-start-5 sm:row-start-2 sm:col-start-1 sm:col-span-1 md:row-start-3 md:col-start-1 md:col-span-1 lg:row-start-1 lg:col-start-3 lg:col-span-1 cuisiner m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5 ">
-                    <button id="cuisiner" onclick="addcanele('blue')" class="p-2 lg:rounded-md bg-blue-200">Cuisiner</button><br>
-                    <label for="cuisiner" class="p-4" id="nbrcan">Pour 1 clique 1 cannelé</label>
-            </div>
-            <div class="col-start-1 col-span-2 row-start-6 sm:row-start-2 sm:col-start-2 sm:col-span-1 md:row-start-3 md:col-start-2 md:col-span-1 lg:row-start-1 lg:col-start-4 lg:col-span-1 four m-5 shadow-md rounded-lg overflow-hidden  bg-white p-5 ">
-                    <button id="four" onclick="delcanele('red')" disabled class="p-2 lg:rounded-md bg-green-500 disabled:opacity-75 disabled:bg-red-500" >Acheter un four (25 Canelé)</button><br>
-                    <label for="four" class="p-4" id="counter">Vous avez aucun four</label>
-            </div>
+            <!-- Cannelées -->
         </section>
-    </main>
-    <main class="flex justify-center">
-        <img src="build/img/caneles.jpg" class="w-fit my-auto mx-auto">
+        <section class="pt-4 flex flex-col justify-center  bg-white rounded-lg shadow-sm m-5 hover:m-4 hover:shadow-lg" id="cookiesbuymdl">
+            <button onclick="buy_150000()">BUY 15.000$</button>
+            <!-- Cookies -->
+        </section>
+        <section class="pt-4 flex flex-col justify-center  bg-white rounded-lg shadow-sm m-5 hover:m-4 hover:shadow-lg" id="milkshakebuymdl">
+            <button onclick="buy_1500000()">BUY 1.500.000$</button>
+            <!-- Milkshake -->
+        </section>
+        <div class="grid grid-rows-2 justify-center flex flex-col m-2 row-start-2 col-start-2">
+            <section class="m-2 p-2 col-start-1 row-start-1 col-span-2">
+                Changement de prix dans : <span id="time"></span>
+            </section>
+            <button class="m-2 p-2 col-start-1 row-start-2" onclick="save()">Sauvegarder</button>
+            <button class="m-2 p-2 col-start-2 row-start-2" onclick="load()">Charger</button>
+        </div>
     </main>
 </body>
 </html>
